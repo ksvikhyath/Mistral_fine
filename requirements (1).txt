@@ -1,0 +1,29 @@
+# ── Install order matters — do these first ────────────────────────────────────
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+# pip install -r requirements.txt
+
+# ── HuggingFace stack ─────────────────────────────────────────────────────────
+transformers==4.44.2
+datasets==2.21.0
+accelerate==0.33.0
+peft==0.12.0
+trl==0.10.1          # SFTConfig is available from 0.9.x onwards
+
+# ── Quantisation ──────────────────────────────────────────────────────────────
+bitsandbytes==0.43.3
+
+# ── Tokenisation ──────────────────────────────────────────────────────────────
+sentencepiece==0.2.0
+tokenizers==0.19.1
+
+# ── HuggingFace Hub (for model download) ─────────────────────────────────────
+huggingface_hub==0.24.6
+
+# ── Plotting & metrics ────────────────────────────────────────────────────────
+matplotlib==3.9.2
+scikit-learn==1.5.1
+
+# ── Utilities ─────────────────────────────────────────────────────────────────
+numpy==1.26.4
+tqdm==4.66.5
+pandas==2.2.2
