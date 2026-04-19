@@ -1,22 +1,5 @@
 # Mistral-7B Fine-Tuning Pipeline
 
-QLoRA Supervised Fine-Tuning of Mistral-7B-Instruct on a custom agentic dataset.
-Optimised for **NVIDIA RTX 4500 Ada (24 GB VRAM)**.
-
-All bugs from the Llama run are fixed in these scripts — see the FIX notes below.
-
----
-
-## What was fixed from the Llama run
-
-| # | Error | Fix applied |
-|---|---|---|
-| FIX 1 | `NameError: name 'metrics_callback' is not defined` in `save_metrics()` | Callback created before trainer and passed explicitly as a parameter |
-| FIX 2 | `RuntimeError: _amp_foreach_non_finite_check_and_unscale_cuda not implemented for BFloat16` | `FP16=False`, `BF16=True` in `global_variables.py` |
-| FIX 3 | `SFTTrainer` rejected `max_seq_length` param in newer TRL | Switched to `SFTConfig` (uses `max_length` instead) |
-| FIX 4 | `local_files_only=True` blocked HuggingFace Hub download | Removed — model loads from HF Hub and caches locally |
-
----
 
 ## How to get Mistral-7B onto your system
 
